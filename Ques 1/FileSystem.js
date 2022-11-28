@@ -1,6 +1,5 @@
 const fs = require('fs')
 
-
 // Create a file with fs.open function
 fs.open("newFile.txt",'w',(err)=>{
     if(err) throw err ;
@@ -17,7 +16,12 @@ fs.appendFile("newFile.txt","This is added file",(err)=>{
     if(err) console.log(err);
     else console.log("File Updated successfully");
 })
+// Read the content
+fs.readFile("newFile.txt",(err,data)=>{
+    console.log(data.toString());
+});
 // Delete the file
+
 fs.unlink("newFile.txt",(err)=>{
     if(err) console.log(err);
     else console.log("File Deleted successfully");
